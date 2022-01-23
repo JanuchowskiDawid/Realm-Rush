@@ -7,7 +7,7 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int maxHitPoints = 5;
     int currentHitPoints;
-    private void Start()
+    private void OnEnable()
     {
         currentHitPoints = maxHitPoints;
     }
@@ -25,8 +25,9 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+
     private void KillEnemy()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
